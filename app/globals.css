@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 225 65% 33%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+
+    --radius: 0.5rem;
+
+    /* Chart colors for light mode */
+    --chart-1: 220 100% 50%; /* Blue */
+    --chart-2: 140 70% 40%; /* Green */
+    --chart-3: 30 80% 50%; /* Orange */
+    --chart-4: 280 60% 60%; /* Purple */
+    --chart-5: 60 80% 50%; /* Yellow */
+
+    /* Success/Warning/Info colors for light mode */
+    --success: 140 70% 40%;
+    --success-foreground: 0 0% 98%;
+    --warning: 30 80% 50%;
+    --warning-foreground: 0 0% 98%;
+    --info: 220 100% 50%;
+    --info-foreground: 0 0% 98%;
+    --highlight: 280 60% 60%;
+    --highlight-foreground: 0 0% 98%;
+
+    /* Custom Sidebar Colors for Light Mode (Paraná Blue Theme) */
+    --sidebar-background: 225 65% 33%; /* Main blue: #1e3a8a */
+    --sidebar-foreground: 0 0% 100%; /* White text */
+    --sidebar-primary: 0 0% 100%; /* White for elements like logo inner circle */
+    --sidebar-primary-foreground: 225 65% 33%; /* Text on primary, e.g., logo icon color */
+    --sidebar-accent: 225 65% 40%; /* Slightly lighter blue for hover/active states */
+    --sidebar-accent-foreground: 0 0% 100%; /* White text on accent */
+    --sidebar-border: 225 65% 45%; /* Border color */
+    --sidebar-ring: 217.2 91.2% 59.8%; /* Existing blue ring */
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 6%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 6%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 225 65% 55%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 75% 65%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 0 0% 98%;
+
+    /* Chart colors for dark mode - brighter and more visible */
+    --chart-1: 220 100% 70%; /* Bright Blue for dark mode */
+    --chart-2: 140 70% 60%; /* Bright Green for dark mode */
+    --chart-3: 30 90% 70%; /* Bright Orange for dark mode */
+    --chart-4: 280 70% 80%; /* Bright Purple for dark mode */
+    --chart-5: 60 90% 70%; /* Bright Yellow for dark mode */
+
+    /* Enhanced success/warning/info colors for dark mode - more vibrant */
+    --success: 140 80% 65%; /* Bright emerald green */
+    --success-foreground: 240 10% 3.9%;
+    --warning: 30 95% 75%; /* Bright amber/orange */
+    --warning-foreground: 240 10% 3.9%;
+    --info: 200 100% 75%; /* Bright cyan blue */
+    --info-foreground: 240 10% 3.9%;
+    --highlight: 280 80% 85%; /* Bright magenta/purple */
+    --highlight-foreground: 240 10% 3.9%;
+
+    /* Additional accent colors for dark mode */
+    --accent-blue: 220 100% 75%;
+    --accent-green: 140 80% 70%;
+    --accent-orange: 30 95% 75%;
+    --accent-purple: 280 80% 85%;
+    --accent-pink: 320 80% 80%;
+    --accent-cyan: 180 80% 75%;
+    --accent-yellow: 60 95% 75%;
+
+    /* Custom Sidebar Colors for Dark Mode */
+    --sidebar-background: 240 5.9% 10%; /* Dark gray for dark mode */
+    --sidebar-foreground: 240 4.8% 95.9%; /* Light gray text for dark mode */
+    --sidebar-primary: 0 0% 98%; /* White for elements like logo inner circle */
+    --sidebar-primary-foreground: 240 5.9% 10%; /* Dark text on primary */
+    --sidebar-accent: 240 3.7% 15.9%; /* Darker gray for accent */
+    --sidebar-accent-foreground: 240 4.8% 95.9%; /* Light gray text on accent */
+    --sidebar-border: 240 3.7% 15.9%; /* Border color */
+    --sidebar-ring: 217.2 91.2% 59.8%; /* Existing blue ring */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom utility classes for enhanced dark mode colors */
+@layer utilities {
+  .text-success {
+    color: hsl(var(--success));
+  }
+  .text-warning {
+    color: hsl(var(--warning));
+  }
+  .text-info {
+    color: hsl(var(--info));
+  }
+  .text-highlight {
+    color: hsl(var(--highlight));
+  }
+  .bg-success {
+    background-color: hsl(var(--success));
+    color: hsl(var(--success-foreground));
+  }
+  .bg-warning {
+    background-color: hsl(var(--warning));
+    color: hsl(var(--warning-foreground));
+  }
+  .bg-info {
+    background-color: hsl(var(--info));
+    color: hsl(var(--info-foreground));
+  }
+  .bg-highlight {
+    background-color: hsl(var(--highlight));
+    color: hsl(var(--highlight-foreground));
+  }
+
+  /* Dark mode specific accent colors */
+  .dark .text-accent-blue {
+    color: hsl(var(--accent-blue));
+  }
+  .dark .text-accent-green {
+    color: hsl(var(--accent-green));
+  }
+  .dark .text-accent-orange {
+    color: hsl(var(--accent-orange));
+  }
+  .dark .text-accent-purple {
+    color: hsl(var(--accent-purple));
+  }
+  .dark .text-accent-pink {
+    color: hsl(var(--accent-pink));
+  }
+  .dark .text-accent-cyan {
+    color: hsl(var(--accent-cyan));
+  }
+  .dark .text-accent-yellow {
+    color: hsl(var(--accent-yellow));
+  }
+}
